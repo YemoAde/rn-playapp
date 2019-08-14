@@ -3,19 +3,18 @@ import { fetchList } from './service';
 import { errorhandler } from '../../utils/error';
 
 
-export const getListings = () => async dispatch => {
+export const getListings = (filter = null) => async (dispatch) => {
     dispatch({
-        type: Constant.FETCH_LIST
+        type: Constant.FETCH_LIST,
     })
 
 
     try {
-
         const options = {
             start: Constant.DEFAULT_START,
             limit: Constant.DEFAULT_LIMIT,
             convert: 'USD',
-            sort: 'market_cap'
+            sort: filter
         }
 
         const networkResponse = await fetchList(options)
@@ -29,10 +28,7 @@ export const getListings = () => async dispatch => {
         })
 
     } catch (error) {
-
-        console.log(error)
-        errorhandler(error, (message) => {
-            console.log(message)
+        errorhandler(error, message => {
             dispatch({
                 type: Constant.FETCH_FAILED,
                 payload: {

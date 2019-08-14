@@ -1,5 +1,5 @@
 export default {
-    font: 'Verdana'
+    font: 'avenir'
 }
 
 

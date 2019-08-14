@@ -1,48 +1,74 @@
 import { StyleSheet } from 'react-native'
 import colors from '../../../assets/styles/colors';
+import constants from '../../../assets/styles/constants';
 
 
 export default StyleSheet.create({
     container: {
-        width: 280,
+        width: '100%',
         padding: 24,
         borderRadius: 4,
         backgroundColor: colors.white,
+
+        height: '30%',
+        marginTop: 10,
+        marginBottom: 5,
+        marginRight: 10,
+
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
-            height: 4,
+            height: 2,
         },
-        shadowOpacity: 0.30,
+        shadowOpacity: 0.10,
         shadowRadius: 4.65,
-        elevation: 8,
-        height: '40%',
-        marginTop: 20,
-        marginLeft: 10,
-        marginRight: 20,
+        elevation: 4,
 
         flex: 1,
         flexDirection: 'column',
     },
 
-    bigtext: {
-        fontSize: 16,
-        color: colors.dark,
-        fontWeight: '200',
+    header: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
         marginBottom: 10
     },
+
+    up: {
+        color: colors.green,
+        fontSize: 12,
+        fontFamily: constants.font
+    },
+
+    down: {
+        color: colors.red,
+        fontSize: 12,
+        fontFamily: constants.font
+    },
+
+    headertext: {
+        fontSize: 22,
+        color: colors.blue,
+        fontWeight: '500',
+        fontFamily: constants.font,
+        maxWidth: '50%',
+    },
+
+
     smalltext: {
-        fontSize: 10,
-        marginTop: 5,
-        marginBottom: 10,
-        color: colors.green
+        fontSize: 14,
+        marginBottom: 5,
+        color: colors.dark,
+        fontFamily: constants.font
     },
 
     price: {
         fontSize: 24,
         color: colors.blue,
         fontWeight: '500',
-        marginBottom: 5
+        marginBottom: 5,
+        fontFamily: constants.font
     },
 
     quote: {
@@ -51,16 +77,19 @@ export default StyleSheet.create({
         paddingTop: 20,
         paddingBottom: 20,
         paddingLeft: 10,
+        fontFamily: constants.font
     },
 
     currency: {
         fontSize: 12,
-        color: colors.lighttext
+        color: colors.lighttext,
+        fontFamily: constants.font
     },
 
     rate: {
         fontSize: 10,
-        color: 'red'
+        color: 'red',
+        fontFamily: constants.font
     }
 
 

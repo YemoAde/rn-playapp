@@ -1,22 +1,27 @@
 import React from 'react';
 import { View, Text } from 'react-native'
 import CardStyle from './Card.style';
-import QuoteComponent from './Quote.component';
+import Stats from './Stats.component';
 
+export default Card = ({ item }) => {
 
-
-export default Card = (props) => {
-
-    const { name, total_supply, symbol, slug } = props.item
+    const { name, symbol, quote } = item
+    const { percent_change_1h, price } = quote['USD']
     return (
         <View style={CardStyle.container}>
-            <Text style={CardStyle.bigtext}>{name}</Text>
-            <Text style={CardStyle.price}>{` ${symbol} - ${total_supply}`}</Text>
-            <Text style={CardStyle.smalltext}> {slug}</Text>
-            
-            <View>
-                <QuoteComponent quote={props.item.quote['USD']} currency={'USD'} />
+
+            <View style={CardStyle.header}>
+                <Text style={CardStyle.headertext}>{name}</Text>
+                <Stats value={percent_change_1h} />
             </View>
+
+
+
+            <Text style={CardStyle.smalltext}> 1 {symbol} = ${price.toFixed(2)}</Text>
+
+            {/* <View>
+                <QuoteComponent quote={props.item.quote['USD']} currency={'USD'} />
+            </View> */}
         </View>
     )
 }
