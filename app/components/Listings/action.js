@@ -14,7 +14,8 @@ export const getListings = () => async dispatch => {
         const options = {
             start: Constant.DEFAULT_START,
             limit: Constant.DEFAULT_LIMIT,
-            convert: 'USD'
+            convert: 'USD',
+            sort: 'market_cap'
         }
 
         const networkResponse = await fetchList(options)

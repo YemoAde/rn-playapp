@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { getListings } from './action'
 import Card from '../Card/Card.component';
 import ListingStyle from './Listing.style';
+import { Dropdown } from 'react-native-material-dropdown';
 
 
 const Listing = props => {
@@ -20,9 +21,24 @@ const Listing = props => {
         )
     }
 
-
+    let data = [{
+      value: 'name',
+    }, {
+      value: 'symbol',
+    }, {
+      value: 'date_added',
+    }, {
+      value: 'market_cap_strict',
+    }, {
+      value: 'price',
+    }, {
+      value: 'circulating_supply',
+    }];
     return (
         <>
+        <View style={ListingStyle.container}>
+            <Dropdown label='Filter Data' data={data}/>
+        </View>
             <ScrollView style={ListingStyle.scrollview} horizontal={true}>
                 <>
                     {listings && listings.map(
