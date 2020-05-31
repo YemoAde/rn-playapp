@@ -10,6 +10,7 @@ export const getListings = (filter = null) => async (dispatch) => {
 
 
     try {
+        
         const options = {
             start: Constant.DEFAULT_START,
             limit: Constant.DEFAULT_LIMIT,
